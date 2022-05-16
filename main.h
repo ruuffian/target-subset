@@ -18,12 +18,18 @@ void algorithm(info *);
 
 /*
  * Recursive method to find a subset of a multiset whose elements sum to a target integer.
- * Flag == 0 means no solution was found, flag == 1 means solution found.
+ * Flag == 0 means no solution was found, flag == 1 means a solution found.
  */
 info recurse(info, int *);
 
-/* Add an element to the subset of an info struct, update the target long, and return the struct. */
+/* Copy fields from a to b */
+void copy_info(info *a, info *b);
+
+/* Add an element to the subset of an info struct and update the target long. */
 void add_element(info *, long);
+
+/* Resets the fields in an info struct */
+void reset(info *);
 
 /* Returns 1 if the string contains only numbers and commas, 0 otherwise. */
 int is_valid(char *);
